@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# https://www.drupal.org/node/3060/release
+: ${DRUPAL_VERSION:=8.2.4}
+: ${DRUPAL_MD5:=288aa9978b5027e26f20df93b6295f6c}
+
+# Install drupal if it doesn't exist
+if [ ! -f /opt/app-root/src/drupal/index.php ]; then
+echo "-> Installing drupal.."
+
+curl -fSL "https://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz \
+    	&& echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c - \
+    	&& tar -xz --strip-components=1 -f drupal.tar.gz --no-overwrite-dir -C /opt/app-root/src/drupal/ \
+    	&& rm drupal.tar.gz \
+      && fix-permissions /opt/app-root/src/drupal
+fi
+
+# Create healthcheck file
+echo '1' > /opt/app-root/src/drupal/healthcheck.php
+
+echo -e "-> Drupal is now ready!\n"
+exec ${STI_SCRIPTS_PATH}/run
