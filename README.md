@@ -1,6 +1,9 @@
 Drupal Docker Image
 ==================
 
+[![Build Status](https://travis-ci.org/ausnimbus/docker-drupal.svg?branch=master)](https://travis-ci.org/ausnimbus/docker-drupal)
+[![Licensed under Apache License version 2.0](https://img.shields.io/github/license/ausnimbus/docker-drupal.svg?maxAge=2592000)](https://www.apache.org/licenses/LICENSE-2.0)
+
 This repository contains Dockerfile to run Drupal on AusNimbus (OpenShift v3).
 
 Note: A volume is created in in the Drupal root directory. This image designed
