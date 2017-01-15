@@ -1,8 +1,8 @@
----
 sudo: required
-
 services:
-  - docker
-
+- docker
 script:
-  - docker build -t ausnimbus/drupal:latest .
+- docker build -t ausnimbus/drupal:latest .
+notifications:
+  slack:
+    secure: fzkwmeNS/bALswOKxPD53XJz2P0NOQ12Hf+kH4kkoGssN0dRt0ptQQ4xFz+RVLtf2EIkC3X5mMBpjvsNghSdzIO26TM/zGW1qNn/30rA+duJHLr9L/cb9O4oEgOh5Ki+eWCeS7bk/MvSO61CMuZQR3t+uX7130I7ZgTHBO5mdGcgeWCQvpHz4inVKjeNfFVJtJU/CZJ26S7Io13h5+Xqo8M9MQajjA6vwHePXelvsYpV0b8bh+8KQr5d7k4NOBm/0c7DxOPghzyxCoQ4rIIQ1siO5bL+xAbgoLQjSQdjQ9/WCKOGnMeFVsDE5gvETsSUw9BxISWWSHXZM/GqOfe4yzZuHeK5d8bKKtc7YXR7Sn/s1OpcPgvaOo1INTGl/I/JJm+w1ZLxG3wK2N50kD76Vafa7nR/ug888sCGZxw0nbWHE6KTNKyIajtEzBde0IQbS9LWjyQVeNqISouVtwMkfXN1JBoQIYHknvJS0mwNtyb6iHutaVqo2l3ZZJ3XdxQYkAmLes0VRxzhbsWxjzYbSAxLG9nOl0iDeIRBBAcT2PVRiL6tzW3rjxG17N8b222ACnC32iCxi0BmMyRM91XnCria0BIZyAAUQn7qcy3E2bgBuCqLvChjUphXx2YI9sXhBbr4Fz25veKY5dCMf1XJsSgLYQP/L3g8GBHDVb8ZFDA=
